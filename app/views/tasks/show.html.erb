@@ -1,0 +1,13 @@
+<h1>
+  <%= @task.title %>
+</h1>
+<p>
+  <%= @task.details %>
+</p>
+<h2>
+  <i class="fa-regular fa-square<%= @task.completed ? '-check' : '' %>"></i>
+  <%= @task.completed ? "This task is done, yay!" : "This task isn't done, get on it" %>
+</h2>
+<%= link_to 'Back', tasks_path %>
+<%= link_to 'Edit', edit_task_path(@task) %>
+<%= link_to 'Delete', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>
